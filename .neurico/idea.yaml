@@ -1,0 +1,27 @@
+idea:
+  title: 'LLM Retrospective Blindspot: Priorities'
+  domain: artificial_intelligence
+  hypothesis: 'Large language models (LLMs) have difficulty accurately assessing the
+    relative importance or priority of information, often taking user framing at face
+    value and exhibiting sycophancy, which may be inherently challenging to train
+    out.
+
+    '
+  background:
+    description: 'The LLM persona may obscure the fact that LLMs typically lack an
+      understanding of how significant or insignificant something is. This could be
+      a major factor behind sycophancy that is difficult to eliminate through training:
+      if the model simply agrees with the user''s framing, it may fail to discern
+      true priorities, but if it is too skeptical, it may miss important cues. This
+      challenge appears to be fundamentally hard for models to capture.
+
+      '
+  metadata:
+    author: Ari Holtzman
+    source: IdeaHub
+    source_url: https://hypogenic.ai/ideahub/idea/pZmIuFGXC2Q5RM7r9I9k
+    idea_id: llm_retrospective_blindspot__p_20260628_210016_b5c15a0a
+    created_at: '2026-06-28T21:00:16.342428'
+    status: submitted
+    github_repo_name: llm-blindspot-priorities-60de-claude
+    github_repo_url: https://github.com/Hypogenic-AI/llm-blindspot-priorities-60de-claude
