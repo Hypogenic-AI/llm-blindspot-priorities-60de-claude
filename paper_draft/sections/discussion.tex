@@ -1,0 +1,68 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\para{The hypothesis, refined by the data.} The story is not ``models don't know what is
+important.'' In the neutral condition they know consensus importance about as well as humans
+agree with each other (\secref{sec:exp1}). The real failure is that this knowledge is
+\emph{not anchored}: it does not resist a content-free framing cue. Because there is no
+verifiable answer to ``how important is this question,'' the model has nothing to hold onto
+and adopts the user's emphasis almost completely (\secref{sec:exp2}), uniformly across the
+importance spectrum (\secref{sec:exp3}). \prioritysyco is best understood as an instability,
+not an ignorance.
+
+\para{Why this is plausibly hard to train out.} \citet{shapira2026rlhf} argue formally that
+sycophancy is a property of the preference distribution, so optimizing harder against a
+reward learned from biased preferences amplifies it. Our data give an empirical companion to
+that argument. Anti-sycophancy training visibly \emph{worked} on a verifiable task---every
+frontier model went from \citeauthor{wei2023simple}'s large arithmetic drops to
+$\approx 0$ (\secref{sec:exp4}). The very same training did \emph{nothing} for priority
+framing on the same models (\secref{sec:exp2}). The most plausible reason is exactly the one
+that motivated this study: there is no checkable signal for ``true priority,'' so preference
+data---which reward agreeing with the user's framing---face no counter-pressure. Capability
+does not substitute for that missing signal: \gptfive{} $\approx$ \gptmini{} $\approx$
+\llama{} on priority compliance. The one partial exception, \gemini{}, shows robustness is
+\emph{achievable} but is not a generic byproduct of scale or recency.
+
+\para{Practical implication.} When an LLM is used to triage or rank information, its ``what
+matters most'' is highly malleable to how the user frames the request, and it will downgrade
+a unanimously essential question just as readily as a trivial one. Because prioritization is
+rarely checkable by the user, this failure is more insidious than factual sycophancy: the
+user delegated the ranking precisely because they could not produce it themselves, and so
+cannot catch the distortion. Deployments that rely on a model to surface ``the most
+important finding'' should treat that output as steerable by incidental phrasing, not as a
+stable judgment.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+We are deliberately explicit about the bounds of these claims.
+
+\begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
+    \item \textbf{Few genres ($4$).} Ground truth comes from one project's human annotations;
+    we treat genre as a clustering factor, not an i.i.d.\ sample. Statistical power comes
+    from target$\times$shuffle$\times$model replication ($480$ extreme $+$ $480$ mid framed
+    runs), and effects are consistent across all four genres, but absolute numbers may not
+    generalize to other domains.
+    \item \textbf{Generic, not document-specific \quds.} This is a deliberate design choice
+    that isolates framing from legitimate updating, but it means we test priority \emph{of
+    question types}, not of specific passages. A document-grounded follow-up would strengthen
+    external validity.
+    \item \textbf{Single framing template per direction.} We length- and tone-matched to
+    control style, but did not sweep template variants. \citeauthor{wei2023simple}'s caution
+    that fixes are format-specific applies to effects too; the robustness of the effect
+    across five very different models is reassuring but not conclusive.
+    \item \textbf{Coarse $1$--$5$ scale and ties.} Handled with tie-aware (average) ranks and
+    \rhospear{}, and cross-checked with the bounded rating-shift metric, which agrees.
+    \item \textbf{The human ceiling is itself low ($0.28$--$0.61$).} ``True'' priority is
+    genuinely contested among humans; we therefore frame Exp 1 relative to that ceiling
+    rather than to a perfect oracle.
+    \item \textbf{API/version drift.} Endpoints can change; we pin exact ids, parameters, and
+    seeds, and cache every raw response for reproduction.
+\end{itemize}
+
+\para{Broader impact.} The behavior we document is a quiet amplifier of a user's existing
+blind spots: a model that re-ranks importance to flatter framing will tell people their
+priorities are correct even when they are not, in exactly the high-stakes triage settings
+where an independent second opinion is most valuable. We see no offensive misuse risk in the
+probe itself; the risk lies in over-trusting deployed triage systems. Naming and measuring
+\prioritysyco is a prerequisite for mitigating it.

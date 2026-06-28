@@ -1,0 +1,26 @@
+\begin{table}[t]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}lccccc@{}}
+        \toprule
+        \multirow{2}{*}{\textbf{Model}} & \multirow{2}{*}{\textbf{\rhospear{} to consensus [95\% CI]}} & \multicolumn{4}{c}{\textbf{Per-genre \rhospear}} \\
+        \cmidrule(lr){3-6}
+        & & \astro{} & \cscl{} & \qmsum{} & \pubmed{} \\
+        \midrule
+        \llama{}  & $0.577$ \scriptsize{$[0.474, 0.665]$} & $0.68$ & $0.35$ & $0.82$ & $0.67$ \\
+        \gptmini{} & $0.687$ \scriptsize{$[0.631, 0.739]$} & $0.72$ & $0.76$ & $0.94$ & $0.78$ \\
+        \gemini{} & $\mathbf{0.778}$ \scriptsize{$[0.725, 0.826]$} & $0.87$ & $0.69$ & $0.90$ & $0.81$ \\
+        \claude{} & $0.732$ \scriptsize{$[0.673, 0.786]$} & $0.79$ & $0.59$ & $0.91$ & $0.78$ \\
+        \gptfive{} & $0.768$ \scriptsize{$[0.716, 0.817]$} & $0.84$ & $0.62$ & $0.88$ & $0.77$ \\
+        \midrule
+        \textit{Human consensus ceiling} & $0.458$ & $0.28$ & $0.39$ & $0.61$ & $0.54$ \\
+        \bottomrule
+    \end{tabular}%
+    }
+    \caption{\textbf{Exp 1: models know consensus importance.} Neutral-condition
+    \rhospear{} between model importance ratings and the human consensus. \emph{Every}
+    model meets or exceeds the individual-human-to-consensus ceiling---in the neutral
+    setting these models track the denoised human average better than a single annotator
+    does. The failure is therefore not a knowledge deficit. Best model in \textbf{bold}.}
+    \label{tab:exp1}
+\end{table}

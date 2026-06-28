@@ -1,0 +1,93 @@
+\section{The \framing{} Probe}
+\label{sec:method}
+
+\subsection{Problem Formulation}
+
+Let a genre define a fixed set of $n$ generic Questions-Under-Discussion
+$Q = \{q_1, \dots, q_n\}$, each carrying a human ground-truth importance $g_i \in [1,5]$
+(the mean of $3$--$5$ annotator ratings). A model, prompted with $Q$ in some order, returns
+a rating vector $\hat{r} \in [1,5]^n$, which induces a ranking. We study two things: (i)
+how well $\hat{r}$ aligns with $g$ in a \emph{neutral} prompt, measured by \rhospear{}; and
+(ii) how a single user opinion sentence about one target item $q_t$ shifts that item's rank.
+Because the \quds are generic to the genre and not tied to a document the user could know
+better, the opinion carries no legitimate information---any shift is framing-following, not
+a Bayesian update.
+
+\subsection{Ground Truth: Human Importance Annotations}
+
+We repurpose the human importance annotations released by the \salience{}
+project~\citep{trienes2025salience}. Each of four document genres has a shared set of \quds
+that annotators rated $1$--$5$ for importance to a brief summary
+(\tabref{tab:genres}). The genres span medical, computational-linguistics, astrophysics, and
+meeting-transcript content, giving a deliberate diversity of domains.
+
+We summarize the realistic upper bound on importance agreement with a \emph{human consensus
+ceiling}: a leave-one-annotator-out \rhospear{} (each human against the mean of the others).
+This ceiling is itself modest ($0.28$--$0.61$, mean $0.46$), reflecting that ``true''
+priority is genuinely contested among humans---which is exactly why we score models against
+the consensus rather than a perfect oracle.
+
+\input{tables/genres}
+
+\subsection{Framing Conditions}
+
+For each genre we present the \quds---numbered, with order shuffled on every repeat to
+control position bias---and ask for a $1$--$5$ importance rating per question, using the
+\citet{trienes2025salience} introspection prompt. We compare three framings whose opinion
+clauses are length- and tone-matched to one short sentence each, avoiding the
+assertiveness/hedging confound flagged by \citet{shapira2026rlhf}:
+
+\begin{itemize}[leftmargin=*,itemsep=1pt,topsep=2pt]
+    \item \condN{} --- neutral, no user opinion.
+    \item \condElow{} --- the user names a clearly \emph{low}-importance \qud{} as ``the
+    single most important thing a summary must answer.''
+    \item \condDtop{} --- the user dismisses a clearly \emph{top}-importance \qud{} as
+    ``not really something a summary needs to answer.''
+\end{itemize}
+
+\subsection{Experiments}
+
+\para{Exp 1 --- Priority knowledge.} We compute neutral \rhospear$(\hat{r}, g)$ per model
+and genre and compare to the human ceiling. This establishes whether the model knows
+consensus importance at all; without it, a framing shift would be uninterpretable.
+
+\para{Exp 2 --- Priority sycophancy (headline).} For each framed elicitation we measure the
+targeted item's shift versus the \emph{matched} neutral run (same model, genre, shuffle):
+the rank shift \sycorank{} (positive $=$ moved toward the user) and the bounded $1$--$5$
+rating shift \sycorating{}. The extreme-target design uses only emphasize-clearly-trivial
+and dismiss-clearly-essential targets: $5$ models $\times$ $4$ genres $\times$ $(3{+}3$
+targets$)$ $\times$ $4$ shuffles $=$ $480$ framed runs plus matched neutrals.
+
+\para{Exp 3 --- Mechanism (does deference track uncertainty?).} We add $480$ \emph{mid-rank}
+target runs and compute \compliance{}: the fraction of the \emph{available} shift actually
+taken, which removes the position/room confound (a top item has little room to move up). We
+bucket compliance by the target's ground-truth importance band (top / mid / bottom) and by
+human disagreement, to test whether models reserve deference for genuinely ambiguous items.
+
+\para{Exp 4 --- Arithmetic sycophancy (control).} We run the \citet{wei2023simple}
+$a \times b$ probe with and without a ``math professor'' asserting a plausible wrong answer:
+$5$ models $\times$ $120$ problems $\times$ $2$ conditions $=$ $1{,}200$ runs. This anchors
+the priority results against a sycophancy signal with a verifiable ground truth, on the same
+models.
+
+\subsection{Models, Metrics, and Implementation}
+
+\para{Models.} We use a capability gradient across four providers (via OpenRouter, June
+2026): \llama{} (small open), \gptmini{} (small proprietary), \gemini{} (mid), and two
+frontier models, \claude{} and \gptfive{}.
+
+\para{Metrics.} Priority accuracy is \rhospear$(\hat{r}, g)$ (tie-aware, using average
+ranks for the coarse $1$--$5$ scale). Sycophancy is the targeted-item \sycorank{} and
+\sycorating{}, the follow-rate (fraction of framings moving the item the agreed way), and
+\compliance{}. We also report the change in whole-ranking \rhospear$(\hat{r}, g)$ under
+framing and the arithmetic accuracy drop. Confidence intervals come from $5{,}000\times$
+bootstrap (seed $42$); we use paired Wilcoxon signed-rank tests against $0$ and
+Mann-Whitney $U$ for group contrasts. \emph{All} models and genres are reported with no
+selection.
+
+\para{Implementation.} Priority elicitations use temperature $0.7$ with per-shuffle seeds
+and $\geq 4$ order shuffles averaged; the arithmetic probe uses temperature $0.0$. The
+\gptfive{} reasoning contract (\texttt{max\_completion\_tokens}, fixed temperature) is
+handled in our harness. All $2{,}240$ API calls are cached on disk for exact
+reproducibility, at a total cost of $\approx \$3.6$ ($\approx 451$k input $+$ $343$k output
+tokens).

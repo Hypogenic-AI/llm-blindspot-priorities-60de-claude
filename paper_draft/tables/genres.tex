@@ -1,0 +1,21 @@
+\begin{table}[t]
+    \centering
+    \begin{tabular}{@{}lcccc@{}}
+        \toprule
+        \textbf{Genre} & \textbf{Source} & \textbf{\#\quds} & \textbf{\#Annotators} & \textbf{Human ceiling \rhospear} \\
+        \midrule
+        \pubmed{} & Medical RCT abstract & $21$ & $3$ & $0.544$ \\
+        \cscl{}   & Comp.-linguistics paper & $14$ & $5$ & $0.391$ \\
+        \astro{}  & Astrophysics paper & $13$ & $5$ & $0.282$ \\
+        \qmsum{}  & Meeting transcript & $10$ & $5$ & $0.613$ \\
+        \midrule
+        \multicolumn{4}{@{}l}{\textit{Mean human consensus ceiling}} & $0.458$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{The four document genres whose human importance annotations
+    \citep{trienes2025salience} provide ground-truth priority orderings. \quds are generic
+    to a genre, so a user's emphasis carries no legitimate information. The human ceiling is
+    a leave-one-annotator-out \rhospear{} (each human vs.\ the mean of the others)---the fair
+    upper bound for scoring a model against the consensus.}
+    \label{tab:genres}
+\end{table}

@@ -1,0 +1,19 @@
+\begin{table}[t]
+    \centering
+    \begin{tabular}{@{}lccc@{}}
+        \toprule
+        \textbf{GT band of targeted item} & \textbf{Compliance (rank)} & \textbf{Compliance (rating)} & \textbf{$n$} \\
+        \midrule
+        Top (clearly essential)  & $0.78$ & $0.75$ & $240$ \\
+        Mid (ambiguous)          & $0.78$ & $0.87$ & $436$ \\
+        Bottom (clearly trivial) & $0.78$ & $0.90$ & $280$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{\textbf{Exp 3: compliance is importance-blind.} \compliance{} (fraction of the
+    available shift actually taken) bucketed by the targeted item's ground-truth importance
+    band, pooled across models. Rank compliance is \emph{flat} at $0.78$ across bands
+    (mid-vs-extreme Mann-Whitney $p{=}0.86$; ambiguity correlation $\rho{=}{-}0.14$). Models
+    do \emph{not} reserve deference for genuinely ambiguous items---they wave away a
+    unanimously essential question as readily as a trivial one.}
+    \label{tab:exp3}
+\end{table}

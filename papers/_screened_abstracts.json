@@ -1,0 +1,50 @@
+{
+  "linear_probe2024_reduce_sycophancy": {
+    "title": "Linear Probe Penalties Reduce LLM Sycophancy",
+    "year": 2024,
+    "authors": "H. Papadatos, Rachel Freedman",
+    "abstract": "Large language models (LLMs) are often sycophantic, prioritizing agreement with their users over accurate or objective statements. This problematic behavior becomes more pronounced during reinforcement learning from human feedback (RLHF), an LLM fine-tuning stage intended to align model outputs with human values. Instead of increasing accuracy and reliability, the reward model learned from RLHF often rewards sycophancy. We develop a linear probing method to identify and penalize markers of sycophancy within the reward model, producing rewards that discourage sycophantic behavior. Our experiments show that constructing and optimizing against this surrogate reward function reduces sycophantic "
+  },
+  "truthdecay2025_multiturn_sycophancy": {
+    "title": "TRUTH DECAY: Quantifying Multi-Turn Sycophancy in Language Models",
+    "year": 2025,
+    "authors": "Joshua Liu, Aarav Jain, Soham Takuri, Srihan Vege, Aslihan Akalin, Kevin Zhu, Sean O'Brien, Vasu Sharma",
+    "abstract": "Rapid improvements in large language models have unveiled a critical challenge in human-AI interaction: sycophancy. In this context, sycophancy refers to the tendency of models to excessively agree with or flatter users, often at the expense of factual accuracy. While previous studies have primarily analyzed this behavior in single-turn interactions, its persistence and evolution in multi-step conversations remain largely unexplored. We introduce TRUTH DECAY, a benchmark specifically designed to evaluate sycophancy in extended dialogues, where language models must navigate iterative user feedback, challenges, and persuasion. We prompt models to elicit four types of sycophantic biases. We the"
+  },
+  "syceval2025_evaluating_sycophancy": {
+    "title": "SycEval: Evaluating LLM Sycophancy",
+    "year": 2025,
+    "authors": "A.H. Fanous, Jacob Goldberg, Ank A. Agarwal, Joanna Lin, Anson Y. Zhou, R. Daneshjou, Oluwasanmi Koyejo",
+    "abstract": "Large language models (LLMs) are increasingly applied in\neducational, clinical, and professional settings, but their\ntendency for sycophancy\u2014prioritizing\nuser agreement over independent reasoning\u2014poses risks to\nreliability. This study introduces a framework to evaluate\nsycophantic behavior in\nChatGPT-4o, Claude-Sonnet, and Gemini-1.5-Pro across AMPS\n(mathematics) and MedQuad (medical advice) datasets.\nSycophantic behavior was\nobserved in 58.19% of cases, with Gemini exhibiting the\nhighest rate (62.47%) and ChatGPT the lowest (56.71%).\nProgressive sycophancy, leading\nto correct answers, occurred in 43.52% of cases, while\nregressive sycophancy, leading to incorrect answers, was\nobserved in 14."
+  },
+  "are_you_sure2023_flipflop": {
+    "title": "Are You Sure? Challenging LLMs Leads to Performance Drops in The FlipFlop Experiment",
+    "year": 2023,
+    "authors": "Philippe Laban, Lidiya Murakhovs'ka, Caiming Xiong, Chien-Sheng Wu",
+    "abstract": "The interactive nature of Large Language Models (LLMs) theoretically allows models to refine and improve their answers, yet systematic analysis of the multi-turn behavior of LLMs remains limited. In this paper, we propose the FlipFlop experiment: in the first round of the conversation, an LLM completes a classification task. In a second round, the LLM is challenged with a follow-up phrase like\"Are you sure?\", offering an opportunity for the model to reflect on its initial answer, and decide whether to confirm or flip its answer. A systematic study of ten LLMs on seven classification tasks reveals that models flip their answers on average 46% of the time and that all models see a deterioratio"
+  },
+  "casper2023_open_problems_rlhf": {
+    "title": "Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback",
+    "year": 2023,
+    "authors": "Stephen Casper, Xander Davies, Claudia Shi, T. Gilbert, J'er'emy Scheurer, Javier Rando, Rachel Freedman, Tomasz Korbak, David Lindner, Pedro J Freire, Tony Wang, Samuel Marks, Charbel-Rapha\u00ebl S\u00e9gerie, Micah Carroll, Andi Peng, Phillip J. K. Christoffersen, Mehul Damani, Stewart Slocum, Usman Anwar, Anand Siththaranjan, Max Nadeau, Eric J. Michaud, J. Pfau, D. Krasheninnikov, Xin Chen, L. Langosco, Peter Hase, Erdem Biyik, A. Dragan, David Krueger, Dorsa Sadigh, Dylan Hadfield-Menell",
+    "abstract": "Reinforcement learning from human feedback (RLHF) is a technique for training AI systems to align with human goals. RLHF has emerged as the central method used to finetune state-of-the-art large language models (LLMs). Despite this popularity, there has been relatively little public work systematizing its flaws. In this paper, we (1) survey open problems and fundamental limitations of RLHF and related methods; (2) overview techniques to understand, improve, and complement RLHF in practice; and (3) propose auditing and disclosure standards to improve societal oversight of RLHF systems. Our work emphasizes the limitations of RLHF and highlights the importance of a multi-faceted approach to the"
+  },
+  "ouyang2022_instructgpt_rlhf": {
+    "title": "Training language models to follow instructions with human feedback",
+    "year": 2022,
+    "authors": "Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Chong Zhang, S. Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke E. Miller, M. Simens, Amanda Askell, Peter Welinder, P. Christiano, Jan Leike, Ryan J. Lowe",
+    "abstract": "Making language models bigger does not inherently make them better at following a user's intent. For example, large language models can generate outputs that are untruthful, toxic, or simply not helpful to the user. In other words, these models are not aligned with their users. In this paper, we show an avenue for aligning language models with user intent on a wide range of tasks by fine-tuning with human feedback. Starting with a set of labeler-written prompts and prompts submitted through the OpenAI API, we collect a dataset of labeler demonstrations of the desired model behavior, which we use to fine-tune GPT-3 using supervised learning. We then collect a dataset of rankings of model outp"
+  },
+  "content_importance_2020_summarization": {
+    "title": "Modeling Content Importance for Summarization with Pre-trained Language Models",
+    "year": 2020,
+    "authors": "Liqiang Xiao, Lu Wang, Hao He, Yaohui Jin",
+    "abstract": "Modeling content importance is an essential yet challenging task for summarization. Previous work is mostly based on statistical methods that estimate word-level salience, which does not consider semantics and larger context when quantifying importance. It is thus hard for these methods to generalize to semantic units of longer text spans. In this work, we apply information theory on top of pre-trained language models and define the concept of importance from the perspective of information amount. It considers both the semantics and context when evaluating the importance of each semantic unit. With the help of pre-trained language models, it can easily generalize to different kinds of semant"
+  },
+  "framing2025_comparing_humans_llms": {
+    "title": "Comparing the Framing Effect in Humans and LLMs on Naturally Occurring Texts",
+    "year": 2025,
+    "authors": "G. Lior, Liron Nacchace, Gabriel Stanovsky",
+    "abstract": "Humans are influenced by how information is presented, a phenomenon known as the framing effect. Prior work suggests that LLMs may also be susceptible to framing, but it has relied on synthetic data and did not compare to human behavior. To address this gap, we introduce WildFrame - a dataset for evaluating LLM responses to positive and negative framing in naturally-occurring sentences, alongside human responses on the same data. WildFrame consists of 1,000 real-world texts selected to convey a clear sentiment; we then reframe each text in either a positive or negative light and collect human sentiment annotations. Evaluating eleven LLMs on WildFrame, we find that all models respond to refra"
+  }
+}

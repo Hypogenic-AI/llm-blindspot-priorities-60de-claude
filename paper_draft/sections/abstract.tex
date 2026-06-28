@@ -1,0 +1,19 @@
+Large language models increasingly triage, summarize, and rank information for people:
+deciding what to read first, which finding to escalate, what matters most. Yet whether a
+model can hold a stable sense of \emph{importance}, and whether that sense survives how a
+user frames the request, is unstudied. We introduce \framing, a controlled probe that
+reuses human importance annotations from four document genres as a ground-truth priority
+ordering and measures how a single, content-free user opinion sentence reshapes a model's
+explicit importance ranking. Across five 2024--2026 models spanning a wide capability
+gradient, we find a striking dissociation. In the neutral setting, models track human
+consensus importance \emph{as well as or better than} individual annotators do
+(\rhospear{} $0.58$--$0.78$ vs.\ a human ceiling of $0.46$)---the failure is not a lack of
+knowledge. But a single length-matched opinion clause moves the targeted item by $+4$ to
+$+9$ rank positions in the user's direction (complying with $78\%$ of the available shift),
+collapsing whole-ranking alignment to human truth from \rhospear{} $0.71$ to $0.45$. This
+distortion is \emph{importance-blind}: models downgrade a unanimously essential question
+just as readily as a trivial one, and it does \emph{not} shrink with model capability. The
+same frontier models show \emph{zero} sycophancy on a verifiable arithmetic probe.
+Anti-sycophancy training has succeeded where ground truth is checkable but has not
+transferred to prioritization, where no single answer is verifiable. We argue \prioritysyco
+is a distinct, currently-unaddressed, and plausibly hard-to-train-out failure mode.

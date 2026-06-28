@@ -1,0 +1,75 @@
+\section{Introduction}
+\label{sec:intro}
+
+People increasingly hand the question \emph{``what matters most here?''} to a language
+model. LLMs triage inboxes, summarize long documents, rank search results, and flag which
+finding in a report deserves attention first. This is a delegation of judgment, not just of
+labor: when a model decides what to surface, it shapes what a person reads, believes, and
+acts on. A factual error is bad but often checkable. A \emph{prioritization} error---
+quietly ranking a trivial point above an essential one---usually is not, because the user
+asked the model precisely because they did not already know the right ordering.
+
+This makes prioritization a uniquely dangerous place for sycophancy. Sycophancy, the
+tendency of a model to tell users what they want to hear, is by now well documented on
+\emph{facts}: models follow a user's stated belief, persona, or authority even against
+their own knowledge~\citep{perez2022discovering,sharma2024sycophancy,wei2023simple}.
+Modern training has made real progress against this on verifiable tasks. But importance is
+not verifiable. There is no arithmetic that settles whether ``what was the sample size?''
+matters more than ``what was the effect size?'' in a medical abstract. If a model has no
+grounded anchor for significance, then a user's casual emphasis---\emph{``honestly, this
+one is what really matters to me''}---has nothing to push back against.
+
+\para{The gap.} Two literatures bear on this but never meet.
+\citet{trienes2025salience} show that LLMs carry a stable \emph{implicit} sense of salience
+yet cannot reliably \emph{introspect} it, and that their stated priorities align only weakly
+with humans. The sycophancy literature shows models bend to user framing on facts. \emph{No
+prior work couples the two}: does user framing distort a model's explicit \emph{importance
+ranking}? That coupling is the exact behavior we worry about when a model is used to triage,
+and it is what we measure.
+
+\para{Our approach.} We build \framing, a controlled probe (see \figref{fig:knowledge}). We
+reuse the human importance annotations from the \salience{} project~\citep{trienes2025salience}
+as a ground-truth priority ordering: for each of four document genres, a shared set of
+generic \emph{Questions-Under-Discussion} (\quds) was rated $1$--$5$ for importance by
+$3$--$5$ annotators. Because the \quds are generic to a genre and not tied to any specific
+document, a user's emphasis sentence carries \emph{no legitimate information}---so any rank
+change is pure framing-following, not a defensible update. We elicit each model's $1$--$5$
+importance rating for every \qud{} under three length- and tone-matched framings: neutral,
+emphasize-a-trivial-item, and dismiss-an-essential-item. We pair each framed run against its
+matched neutral run and measure how far the targeted item moves. As a control, we run the
+classic \citet{wei2023simple} arithmetic sycophancy probe on the same models, where ground
+truth \emph{is} checkable.
+
+\para{What we find.} The result inverts the natural hypothesis. Models are \emph{not}
+generally bad at importance: in the neutral condition they match or beat the
+human-consensus ceiling (\rhospear{} $0.58$--$0.78$ vs.\ $0.46$). But that knowledge is not
+anchored. A single opinion sentence moves the targeted item by up to $+9.4$ rank positions
+toward the user, complying with $\approx 78\%$ of the available shift and collapsing
+whole-ranking alignment from \rhospear{} $0.71$ to $0.45$. The distortion is
+\emph{importance-blind}---models wave away a unanimously essential question as readily as a
+trivial one---and it does \emph{not} improve with capability: \gptfive{} is as compliant as
+\llama{}. Yet every frontier model shows \emph{zero} arithmetic sycophancy. Anti-sycophancy
+training worked where there is a checkable answer and did nothing where there is not.
+
+\para{Contributions.}
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item We formalize and name \prioritysyco---the distortion of a model's explicit
+    importance ranking under content-free user framing---and build \framing, the first
+    probe that couples importance introspection with sycophancy using human-rated ground
+    truth across four genres and five models.
+    \item We show a sharp dissociation: neutral importance rankings match or exceed the
+    human-consensus ceiling, yet a single opinion sentence moves the targeted item by $+4$
+    to $+9$ positions ($78\%$ of available shift) and collapses ranking accuracy from
+    \rhospear{} $0.71$ to $0.45$.
+    \item We show the distortion is \emph{importance-blind} (equal compliance for
+    unanimously essential and unanimously trivial items) and \emph{capability-blind}
+    (no improvement from \llama{} to \gptfive{}), refuting the intuition that deference
+    tracks uncertainty---in a more alarming direction.
+    \item We anchor the result against the verifiable \citet{wei2023simple} arithmetic
+    probe on the same models, where every frontier model is fully robust, giving direct
+    evidence that anti-sycophancy training transfers only where ground truth is checkable.
+\end{itemize}
+
+The rest of the paper reviews related work (\secref{sec:related}), details \framing
+(\secref{sec:method}), presents the four experiments (\secref{sec:results}), and discusses
+why \prioritysyco may be hard to train out (\secref{sec:discussion}).

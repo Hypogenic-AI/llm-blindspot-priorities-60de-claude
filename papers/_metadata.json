@@ -1,0 +1,92 @@
+{
+  "casper2023_open_problems_rlhf": {
+    "title": "Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback",
+    "year": 2023,
+    "authors": "Stephen Casper, Xander Davies, Claudia Shi, T. Gilbert, J'er'emy Scheurer, Javier Rando",
+    "arxiv": "2307.15217",
+    "oa_pdf": "",
+    "downloaded": true,
+    "abstract": "Reinforcement learning from human feedback (RLHF) is a technique for training AI systems to align with human goals. RLHF has emerged as the central method used to finetune state-of-the-art large language models (LLMs). Despite this popularity, there has been relatively little public work systematizing its flaws. In this paper, we (1) survey open problems and fundamental limitations of RLHF and related methods; (2) overview techniques to understand, improve, and complement RLHF in practice; and (3) propose auditing and disclosure standards to improve societal oversight of RLHF systems. Our work emphasizes the limitations of RLHF and highlights the importance of a multi-faceted approach to the development of safer AI systems.",
+    "corpusId": 260316010
+  },
+  "salience2025_behavioral_analysis": {
+    "title": "Behavioral Analysis of Information Salience in Large Language Models",
+    "year": 2025,
+    "authors": "Jan Trienes, J\u00f6rg Schl\u00f6tterer, J. Li, Christin Seifert",
+    "arxiv": "2502.14613",
+    "oa_pdf": "",
+    "downloaded": true,
+    "abstract": "Large Language Models (LLMs) excel at text summarization, a task that requires models to select content based on its importance. However, the exact notion of salience that LLMs have internalized remains unclear. To bridge this gap, we introduce an explainable framework to systematically derive and investigate information salience in LLMs through their summarization behavior. Using length-controlled summarization as a behavioral probe into the content selection process, and tracing the answerability of Questions Under Discussion throughout, we derive a proxy for how models prioritize information. Our experiments on 13 models across four datasets reveal that LLMs have a nuanced, hierarchical notion of salience, generally consistent across model families and sizes. While models show highly consistent behavior and hence salience patterns, this notion of salience cannot be accessed through introspection, and only weakly correlates with human perceptions of information salience.1",
+    "corpusId": 276482257
+  },
+  "content_importance_2020_summarization": {
+    "title": "Modeling Content Importance for Summarization with Pre-trained Language Models",
+    "year": 2020,
+    "authors": "Liqiang Xiao, Lu Wang, Hao He, Yaohui Jin",
+    "arxiv": null,
+    "oa_pdf": "https://www.aclweb.org/anthology/2020.emnlp-main.293.pdf",
+    "downloaded": true,
+    "abstract": "Modeling content importance is an essential yet challenging task for summarization. Previous work is mostly based on statistical methods that estimate word-level salience, which does not consider semantics and larger context when quantifying importance. It is thus hard for these methods to generalize to semantic units of longer text spans. In this work, we apply information theory on top of pre-trained language models and define the concept of importance from the perspective of information amount. It considers both the semantics and context when evaluating the importance of each semantic unit. With the help of pre-trained language models, it can easily generalize to different kinds of semantic units n-grams or sentences. Experiments on CNN/Daily Mail and New York Times datasets demonstrate that our method can better model the importance of content than prior work based on F1 and ROUGE scores.",
+    "corpusId": 226262337
+  },
+  "anchoring2025_effect_in_llms": {
+    "title": "An Anchoring Effect in Large Language Models",
+    "year": 2025,
+    "authors": "Daniel E. O\u2019Leary, Daniel E. O\u2019Leary",
+    "arxiv": null,
+    "oa_pdf": "",
+    "downloaded": false,
+    "abstract": "This article examines a well-known bias in human reasoning. Anchoring occurs when people receive a piece of information that influences their future judgments. Human use of anchoring biases has been well studied; however, the purpose of this article is to examine the existence of anchoring within large language models (LLMs). Experiments were performed on three different LLMs, and each LLM demonstrated an anchoring bias when asked to provide numerical estimates about text information. It was determined that LLMs will directly attend to information provided to them and, like humans, anchor their judgments on that information. As the manipulated experimental judgment is only one of several potential dimensions, the extent to which the anchoring bias propagates to the other decision dimensions was also examined.",
+    "corpusId": 277676837
+  },
+  "framing2025_comparing_humans_llms": {
+    "title": "Comparing the Framing Effect in Humans and LLMs on Naturally Occurring Texts",
+    "year": 2025,
+    "authors": "G. Lior, Liron Nacchace, Gabriel Stanovsky",
+    "arxiv": "2502.17091",
+    "oa_pdf": "",
+    "downloaded": true,
+    "abstract": "Humans are influenced by how information is presented, a phenomenon known as the framing effect. Prior work suggests that LLMs may also be susceptible to framing, but it has relied on synthetic data and did not compare to human behavior. To address this gap, we introduce WildFrame - a dataset for evaluating LLM responses to positive and negative framing in naturally-occurring sentences, alongside human responses on the same data. WildFrame consists of 1,000 real-world texts selected to convey a clear sentiment; we then reframe each text in either a positive or negative light and collect human sentiment annotations. Evaluating eleven LLMs on WildFrame, we find that all models respond to reframing in a human-like manner ($r\\geq0.52$), and that both humans and models are influenced more by positive than negative reframing. Notably, GPT models are the least correlated with human behavior among all tested models. These findings raise a discussion around the goals of state-of-the-art LLM development and whether models should align closely with human behavior, to preserve cognitive phenomena such as the framing effect, or instead mitigate such biases in favor of fairness and consistency.",
+    "corpusId": 276576130
+  },
+  "howrlhf2026_amplifies_sycophancy": {
+    "title": "How RLHF Amplifies Sycophancy",
+    "year": 2026,
+    "authors": "Itai Shapira, Gerdus Benade, Ariel D. Procaccia",
+    "arxiv": "2602.01002",
+    "oa_pdf": "",
+    "downloaded": true,
+    "abstract": "Large language models often exhibit increased sycophantic behavior after preference-based post-training, showing a stronger tendency to affirm a user's stated or implied belief even when this conflicts with factual accuracy or sound judgment. We present a formal analysis of how alignment from human feedback can increase this failure mode by identifying an explicit amplification mechanism that causally links optimization against a learned reward to bias in the human preference data used for alignment. We show that the direction of behavioral drift is determined by a covariance under the base policy between endorsing the belief signal in the prompt and the learned reward, and that the first-order effect reduces to a simple mean-gap condition. We then analyze reward learning from pairwise comparisons under random utility models like Bradley-Terry and characterize when bias in human annotators'preferences induces this reward gap. Next, we propose a training-time intervention designed to neutralize the amplification mechanism itself. Among all post-trained policies that prevent sycophantic behavior from increasing, we characterize the unique policy closest in KL divergence to the unconstrained post-trained policy, and derive the corresponding minimal reward correction as a closed-form agreement penalty. Computational experiments find that reward gaps are common and cause behavioral drift in all the configurations considered.",
+    "corpusId": 285270178
+  },
+  "linear_probe2024_reduce_sycophancy": {
+    "title": "Linear Probe Penalties Reduce LLM Sycophancy",
+    "year": 2024,
+    "authors": "H. Papadatos, Rachel Freedman",
+    "arxiv": "2412.00967",
+    "oa_pdf": "",
+    "downloaded": true,
+    "abstract": "Large language models (LLMs) are often sycophantic, prioritizing agreement with their users over accurate or objective statements. This problematic behavior becomes more pronounced during reinforcement learning from human feedback (RLHF), an LLM fine-tuning stage intended to align model outputs with human values. Instead of increasing accuracy and reliability, the reward model learned from RLHF often rewards sycophancy. We develop a linear probing method to identify and penalize markers of sycophancy within the reward model, producing rewards that discourage sycophantic behavior. Our experiments show that constructing and optimizing against this surrogate reward function reduces sycophantic behavior in multiple open-source LLMs. Our results suggest a generalizable methodology for reducing unwanted LLM behaviors that are not sufficiently disincentivized by RLHF fine-tuning.",
+    "corpusId": 274437329
+  },
+  "syceval2025_evaluating_sycophancy": {
+    "title": "SycEval: Evaluating LLM Sycophancy",
+    "year": 2025,
+    "authors": "A.H. Fanous, Jacob Goldberg, Ank A. Agarwal, Joanna Lin, Anson Y. Zhou, R. Daneshjou",
+    "arxiv": "2502.08177",
+    "oa_pdf": "",
+    "downloaded": true,
+    "abstract": "Large language models (LLMs) are increasingly applied in\neducational, clinical, and professional settings, but their\ntendency for sycophancy\u2014prioritizing\nuser agreement over independent reasoning\u2014poses risks to\nreliability. This study introduces a framework to evaluate\nsycophantic behavior in\nChatGPT-4o, Claude-Sonnet, and Gemini-1.5-Pro across AMPS\n(mathematics) and MedQuad (medical advice) datasets.\nSycophantic behavior was\nobserved in 58.19% of cases, with Gemini exhibiting the\nhighest rate (62.47%) and ChatGPT the lowest (56.71%).\nProgressive sycophancy, leading\nto correct answers, occurred in 43.52% of cases, while\nregressive sycophancy, leading to incorrect answers, was\nobserved in 14.66%. Preemptive\nrebuttals demonstrated significantly higher sycophancy\nrates than in-context rebuttals (61.75% vs. 56.52%, Z =\n5.87, p < 0.001), particularly in\ncomputational tasks, where regressive sycophancy increased\nsignificantly (preemptive: 8.13%, in-context: 3.54%, p <\n0.001). Simple rebuttals\nmaximized progressive sycophancy (Z = 6.59, p < 0.001),\nwhile citation-based rebuttals exhibited the highest\nregressive rates (Z = 6.59, p < 0.001).\nSycophantic behavior showed high persistence (78.5%, 95%\nCI: [77.2%, 79.8%]) regardless of context or model. These\nfindings emphasize the risks\nand opportunities of deploying LLMs in structured and\ndynamic domains, offering insights into prompt programming\nand model optimization for\nsafer AI applications",
+    "corpusId": 276287766
+  },
+  "truthdecay2025_multiturn_sycophancy": {
+    "title": "TRUTH DECAY: Quantifying Multi-Turn Sycophancy in Language Models",
+    "year": 2025,
+    "authors": "Joshua Liu, Aarav Jain, Soham Takuri, Srihan Vege, Aslihan Akalin, Kevin Zhu",
+    "arxiv": "2503.11656",
+    "oa_pdf": "",
+    "downloaded": true,
+    "abstract": "Rapid improvements in large language models have unveiled a critical challenge in human-AI interaction: sycophancy. In this context, sycophancy refers to the tendency of models to excessively agree with or flatter users, often at the expense of factual accuracy. While previous studies have primarily analyzed this behavior in single-turn interactions, its persistence and evolution in multi-step conversations remain largely unexplored. We introduce TRUTH DECAY, a benchmark specifically designed to evaluate sycophancy in extended dialogues, where language models must navigate iterative user feedback, challenges, and persuasion. We prompt models to elicit four types of sycophantic biases. We then propose and test sycophancy reduction strategies, evaluating their effectiveness beyond single-step interactions.",
+    "corpusId": 277065947
+  }
+}

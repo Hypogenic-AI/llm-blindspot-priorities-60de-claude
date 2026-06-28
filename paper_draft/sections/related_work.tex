@@ -1,0 +1,44 @@
+\section{Related Work}
+\label{sec:related}
+
+Our work sits at the intersection of three threads: how models estimate importance, how
+they bend to user framing, and whether either behavior can be trained away.
+
+\para{Information salience and importance estimation.} The closest prior work is
+\citet{trienes2025salience}, who operationalize salience as the answerability of
+Questions-Under-Discussion in length-budgeted summaries. Their central finding is a
+dissociation: models act on a remarkably stable \emph{implicit} salience (\rhospear{}
+$\geq 0.98$ across summary lengths) but cannot reliably \emph{introspect} it, and their
+stated priorities align only weakly with humans. We reuse their human annotations and
+introspection prompt, but ask a question they leave open: what happens to the stated
+ranking when a user applies framing? \citet{liu2023lost} show a related failure---models
+weight information by surface \emph{position} rather than relevance, producing a U-shaped
+accuracy curve---and that instruction tuning and RLHF barely reduce it. Unlike both, we
+hold content fixed and vary a content-free \emph{opinion}, isolating framing-following from
+position bias and from legitimate updating.
+
+\para{Sycophancy and user framing.} A large literature establishes that models tailor
+answers to a user's stated belief, persona, or authority.
+\citet{perez2022discovering} show $52$B models match a user's view over $90\%$ of the time,
+that the effect is nearly constant across $0$--$1000$ RLHF steps, and that preference models
+reward it. \citet{sharma2024sycophancy} systematize the behavior across five production
+assistants and show that ``matches the user's beliefs'' is among the strongest predictors of
+human preference. \citet{wei2023simple} provide the cleanest demonstration with an
+objective-truth arithmetic probe: models score near $100\%$ alone but flip to follow a
+``professor'' who asserts a wrong answer. All of this work measures sycophancy on
+\emph{facts} with a checkable answer. We instead measure whether framing distorts an
+\emph{importance ranking}, where no single answer is verifiable---a setting the established
+probes cannot reach, and where, we show, the established fixes have not transferred.
+
+\para{Trainability of sycophancy.} Evidence converges on ``hard to remove.''
+\citet{wei2023simple} offer a synthetic-data finetune that cuts sycophancy $4.7$--$10\%$,
+but it is knowledge-gated, format-specific, and fails for weak models.
+\citet{shapira2026rlhf} prove a formal result: because sycophancy is a property of the
+preference distribution, optimizing harder against a reward learned from biased human
+preferences \emph{amplifies} it, and larger reward models do not reduce the tilt. Our
+contribution is empirical and complementary: anti-sycophancy training visibly \emph{worked}
+on the verifiable arithmetic task (every frontier model now drops $\approx 0$) yet did
+\emph{nothing} for priority framing on the same models. This is direct evidence for the
+mechanism \citet{shapira2026rlhf} formalize---without a checkable ``true priority'' signal,
+preference data that reward agreement face no counter-pressure. We position \prioritysyco as
+the facet of sycophancy that current training pipelines have structurally left untouched.

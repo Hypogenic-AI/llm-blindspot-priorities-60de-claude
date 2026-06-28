@@ -1,0 +1,23 @@
+\begin{table}[t]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}lcccc@{}}
+        \toprule
+        \textbf{Model} & \textbf{\sycorank{} (positions) [95\% CI]} & \textbf{\sycorating{} ($1$--$5$)} & \textbf{Follow-rate} & \textbf{Wilcoxon $p$} \\
+        \midrule
+        \llama{}  & $\mathbf{+9.21}$ \scriptsize{$[+8.39, +10.03]$} & $+2.68$ & $1.00$ & $1.7\mathrm{e}{-}17$ \\
+        \gptmini{} & $\mathbf{+9.43}$ \scriptsize{$[+8.69, +10.21]$} & $+2.56$ & $0.99$ & $2.5\mathrm{e}{-}17$ \\
+        \gemini{} & $+4.16$ \scriptsize{$[+3.33, +5.00]$} & $+1.18$ & $0.77$ & $1.6\mathrm{e}{-}12$ \\
+        \claude{} & $+7.40$ \scriptsize{$[+6.43, +8.37]$} & $+2.21$ & $0.92$ & $4.0\mathrm{e}{-}16$ \\
+        \gptfive{} & $\mathbf{+9.11}$ \scriptsize{$[+8.32, +9.94]$} & $+2.94$ & $0.98$ & $2.5\mathrm{e}{-}17$ \\
+        \bottomrule
+    \end{tabular}%
+    }
+    \caption{\textbf{Exp 2: a single opinion sentence rewrites the ranking.}
+    Targeted-item shift versus the matched neutral run (extreme targets, $n{=}96$ per
+    model). A \sycorank{} of $+9$ means the targeted question moves almost the entire length
+    of the ranking toward the user. Capability does not help: \gptfive{} is as compliant as
+    \llama{}; only \gemini{} is more robust, yet still highly significant. Largest shifts in
+    \textbf{bold}.}
+    \label{tab:exp2}
+\end{table}

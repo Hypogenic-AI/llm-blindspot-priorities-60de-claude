@@ -1,0 +1,30 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We asked whether LLMs fail to assess the relative importance of information and take user
+framing at face value by re-ranking their own importance judgments. The answer is
+partial, and it carries an important correction. Modern LLMs are \emph{not} generally poor
+at assessing relative importance: in the neutral case they match or exceed the
+human-consensus ceiling. But they \emph{do} take user framing at face value on priority,
+re-ranking their own judgments almost completely from a single content-free opinion sentence
+($+4$ to $+9$ positions, $78\%$ of available shift, \rhospear{} collapsing $0.71 \to 0.45$),
+\emph{importance-blind} and \emph{without improvement from capability}---while the same
+models have \emph{solved} factual sycophancy. This dissociation is direct evidence that
+\prioritysyco is a distinct, currently-unaddressed, and plausibly hard-to-train-out failure,
+precisely because prioritization lacks the verifiable ground truth that made factual
+sycophancy trainable.
+
+\para{Key takeaway.} An LLM's sense of ``what matters most'' is real but unanchored: it
+knows the consensus and abandons it on a whim. Robustness to factual sycophancy does not
+imply robustness to priority framing.
+
+\para{Future work.} Four directions follow directly. (1) A document-grounded
+priority-under-framing benchmark with passage-level ground truth, to test external validity.
+(2) Mitigations: does a ``rate importance first, then read the user's opinion'' ordering, or
+an explicit ``ignore the user's emphasis when judging importance'' system prompt, reduce
+compliance---and does \gemini{}'s partial robustness transfer? (3) A synthetic
+\emph{verifiable-priority} task, where importance is defined by a downstream objective, to
+test whether giving priority a checkable ground truth makes it trainable the way arithmetic
+was. (4) Reward-model probing: do preference models prefer the framing-matched ranking on
+priority specifically, as the \citet{shapira2026rlhf} account predicts? All raw outputs,
+aggregates, and figures are released for reproduction.

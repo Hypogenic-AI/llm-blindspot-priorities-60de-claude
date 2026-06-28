@@ -1,0 +1,506 @@
+{
+  "astro-ph": {
+    "genre_id": "astro-ph",
+    "label": "Astrophysics paper",
+    "n_questions": 13,
+    "n_annotators": 5,
+    "human_ceiling_rho": 0.1605,
+    "human_ceiling_rho_std": 0.4435,
+    "items": [
+      {
+        "qid": 0,
+        "question": "What is the main focus of the study?",
+        "gt_mean": 4,
+        "gt_std": 0.8944,
+        "n_ann": 5,
+        "gt_rank": 3
+      },
+      {
+        "qid": 2,
+        "question": "How do the findings affect the understanding of astronomical systems?",
+        "gt_mean": 4.2,
+        "gt_std": 0.7483,
+        "n_ann": 5,
+        "gt_rank": 2
+      },
+      {
+        "qid": 3,
+        "question": "What specific challenges or limitations does the study address or identify?",
+        "gt_mean": 2.6,
+        "gt_std": 1.6248,
+        "n_ann": 5,
+        "gt_rank": 8
+      },
+      {
+        "qid": 5,
+        "question": "What are the broader implications or potential applications of the findings?",
+        "gt_mean": 2.6,
+        "gt_std": 1.3565,
+        "n_ann": 5,
+        "gt_rank": 9
+      },
+      {
+        "qid": 6,
+        "question": "What comparisons are made within the study?",
+        "gt_mean": 2.8,
+        "gt_std": 1.3266,
+        "n_ann": 5,
+        "gt_rank": 7
+      },
+      {
+        "qid": 8,
+        "question": "What methodology or techniques are employed in the study?",
+        "gt_mean": 3,
+        "gt_std": 1.4142,
+        "n_ann": 5,
+        "gt_rank": 6
+      },
+      {
+        "qid": 9,
+        "question": "Which future research directions does the study recommend or outline?",
+        "gt_mean": 2.2,
+        "gt_std": 1.4697,
+        "n_ann": 5,
+        "gt_rank": 12
+      },
+      {
+        "qid": 10,
+        "question": "What specific phenomena or processes are being investigated in the study?",
+        "gt_mean": 3.2,
+        "gt_std": 1.4697,
+        "n_ann": 5,
+        "gt_rank": 5
+      },
+      {
+        "qid": 12,
+        "question": "What specific variables or conditions are crucial in the study's findings?",
+        "gt_mean": 2.6,
+        "gt_std": 0.8,
+        "n_ann": 5,
+        "gt_rank": 10
+      },
+      {
+        "qid": 14,
+        "question": "What detailed evidence or data is used to support the study's claims?",
+        "gt_mean": 2,
+        "gt_std": 1.0954,
+        "n_ann": 5,
+        "gt_rank": 13
+      },
+      {
+        "qid": 15,
+        "question": "What are the main findings of the study?",
+        "gt_mean": 4.8,
+        "gt_std": 0.4,
+        "n_ann": 5,
+        "gt_rank": 1
+      },
+      {
+        "qid": 17,
+        "question": "What broader context or field does the study contribute to or address?",
+        "gt_mean": 2.4,
+        "gt_std": 1.2,
+        "n_ann": 5,
+        "gt_rank": 11
+      },
+      {
+        "qid": 18,
+        "question": "How do the findings relate to existing models or theories?",
+        "gt_mean": 3.8,
+        "gt_std": 0.7483,
+        "n_ann": 5,
+        "gt_rank": 4
+      }
+    ]
+  },
+  "cs-cl": {
+    "genre_id": "cs-cl",
+    "label": "Computational linguistics paper",
+    "n_questions": 14,
+    "n_annotators": 5,
+    "human_ceiling_rho": 0.2613,
+    "human_ceiling_rho_std": 0.2861,
+    "items": [
+      {
+        "qid": 5,
+        "question": "Which benchmarks are considered in the study?",
+        "gt_mean": 2.4,
+        "gt_std": 0.8,
+        "n_ann": 5,
+        "gt_rank": 12
+      },
+      {
+        "qid": 8,
+        "question": "How does the study relate to previous research in the field?",
+        "gt_mean": 4.4,
+        "gt_std": 0.8,
+        "n_ann": 5,
+        "gt_rank": 3
+      },
+      {
+        "qid": 11,
+        "question": "What are the new approaches or methods proposed to address the challenges?",
+        "gt_mean": 4.2,
+        "gt_std": 1.1662,
+        "n_ann": 5,
+        "gt_rank": 4
+      },
+      {
+        "qid": 12,
+        "question": "What recent advancements or innovations are highlighted in the document?",
+        "gt_mean": 3,
+        "gt_std": 0.8944,
+        "n_ann": 5,
+        "gt_rank": 8
+      },
+      {
+        "qid": 14,
+        "question": "What challenge or gap is identified in the research?",
+        "gt_mean": 4.8,
+        "gt_std": 0.4,
+        "n_ann": 5,
+        "gt_rank": 1
+      },
+      {
+        "qid": 15,
+        "question": "What main topic is the document addressing?",
+        "gt_mean": 4.6,
+        "gt_std": 0.8,
+        "n_ann": 5,
+        "gt_rank": 2
+      },
+      {
+        "qid": 16,
+        "question": "What are the broader implications or applications of the research findings?",
+        "gt_mean": 2.6,
+        "gt_std": 1.6248,
+        "n_ann": 5,
+        "gt_rank": 11
+      },
+      {
+        "qid": 19,
+        "question": "What future research directions does the document propose?",
+        "gt_mean": 2.4,
+        "gt_std": 1.0198,
+        "n_ann": 5,
+        "gt_rank": 13
+      },
+      {
+        "qid": 20,
+        "question": "Which previous works or studies are referenced?",
+        "gt_mean": 2.4,
+        "gt_std": 1.2,
+        "n_ann": 5,
+        "gt_rank": 14
+      },
+      {
+        "qid": 21,
+        "question": "What significant results or conclusions does the document draw?",
+        "gt_mean": 3.4,
+        "gt_std": 1.3565,
+        "n_ann": 5,
+        "gt_rank": 7
+      },
+      {
+        "qid": 23,
+        "question": "What are the main approaches or techniques discussed in the document?",
+        "gt_mean": 4.2,
+        "gt_std": 1.1662,
+        "n_ann": 5,
+        "gt_rank": 5
+      },
+      {
+        "qid": 25,
+        "question": "What is a prominent method mentioned for enhancing model effectiveness?",
+        "gt_mean": 2.8,
+        "gt_std": 1.6,
+        "n_ann": 5,
+        "gt_rank": 10
+      },
+      {
+        "qid": 27,
+        "question": "What are the main methods or techniques evaluated in the study?",
+        "gt_mean": 3,
+        "gt_std": 1.2649,
+        "n_ann": 5,
+        "gt_rank": 9
+      },
+      {
+        "qid": 30,
+        "question": "What improvements or contributions do the proposed methods make?",
+        "gt_mean": 3.6,
+        "gt_std": 1.3565,
+        "n_ann": 5,
+        "gt_rank": 6
+      }
+    ]
+  },
+  "qmsum-generic": {
+    "genre_id": "qmsum-generic",
+    "label": "Meeting transcript (QMSum)",
+    "n_questions": 10,
+    "n_annotators": 5,
+    "human_ceiling_rho": 0.6027,
+    "human_ceiling_rho_std": 0.1767,
+    "items": [
+      {
+        "qid": 2,
+        "question": "What were the main objectives or goals discussed in the meeting?",
+        "gt_mean": 4.6,
+        "gt_std": 0.4899,
+        "n_ann": 5,
+        "gt_rank": 3
+      },
+      {
+        "qid": 3,
+        "question": "What collaborative efforts or partnerships were discussed?",
+        "gt_mean": 2.4,
+        "gt_std": 0.8,
+        "n_ann": 5,
+        "gt_rank": 10
+      },
+      {
+        "qid": 4,
+        "question": "What main topic was discussed in the meeting?",
+        "gt_mean": 5,
+        "gt_std": 0.0,
+        "n_ann": 5,
+        "gt_rank": 1
+      },
+      {
+        "qid": 7,
+        "question": "What were the anticipated impacts or implications discussed?",
+        "gt_mean": 2.6,
+        "gt_std": 0.8,
+        "n_ann": 5,
+        "gt_rank": 8
+      },
+      {
+        "qid": 9,
+        "question": "Who are the participants and their roles discussed in the meeting?",
+        "gt_mean": 2.6,
+        "gt_std": 1.4967,
+        "n_ann": 5,
+        "gt_rank": 9
+      },
+      {
+        "qid": 10,
+        "question": "Which aspects of the main topic were covered in the discussion?",
+        "gt_mean": 3,
+        "gt_std": 0.0,
+        "n_ann": 5,
+        "gt_rank": 5
+      },
+      {
+        "qid": 14,
+        "question": "What detailed strategies or solutions were proposed for the challenges discussed?",
+        "gt_mean": 2.8,
+        "gt_std": 1.1662,
+        "n_ann": 5,
+        "gt_rank": 6
+      },
+      {
+        "qid": 15,
+        "question": "What are the identified challenges or concerns discussed?",
+        "gt_mean": 2.8,
+        "gt_std": 0.7483,
+        "n_ann": 5,
+        "gt_rank": 7
+      },
+      {
+        "qid": 16,
+        "question": "What potential future steps or actions were planned in the meeting?",
+        "gt_mean": 4.2,
+        "gt_std": 1.1662,
+        "n_ann": 5,
+        "gt_rank": 4
+      },
+      {
+        "qid": 17,
+        "question": "What were the major outcomes or decisions made during the meeting?",
+        "gt_mean": 5,
+        "gt_std": 0.0,
+        "n_ann": 5,
+        "gt_rank": 2
+      }
+    ]
+  },
+  "pubmed-sample": {
+    "genre_id": "pubmed-sample",
+    "label": "Medical RCT abstract (PubMed)",
+    "n_questions": 21,
+    "n_annotators": 3,
+    "human_ceiling_rho": 0.4627,
+    "human_ceiling_rho_std": 0.0584,
+    "items": [
+      {
+        "qid": 0,
+        "question": "How long was the duration of the intervention or study?",
+        "gt_mean": 3,
+        "gt_std": 0.8165,
+        "n_ann": 3,
+        "gt_rank": 14
+      },
+      {
+        "qid": 1,
+        "question": "What is the main focus of the study?",
+        "gt_mean": 4.6667,
+        "gt_std": 0.4714,
+        "n_ann": 3,
+        "gt_rank": 5
+      },
+      {
+        "qid": 2,
+        "question": "What limitations or considerations are noted by the study?",
+        "gt_mean": 2.3333,
+        "gt_std": 0.9428,
+        "n_ann": 3,
+        "gt_rank": 18
+      },
+      {
+        "qid": 3,
+        "question": "What are the detailed findings regarding adverse events or side effects?",
+        "gt_mean": 2.6667,
+        "gt_std": 0.9428,
+        "n_ann": 3,
+        "gt_rank": 15
+      },
+      {
+        "qid": 4,
+        "question": "What are the main findings regarding efficacy and safety?",
+        "gt_mean": 3.6667,
+        "gt_std": 0.9428,
+        "n_ann": 3,
+        "gt_rank": 10
+      },
+      {
+        "qid": 6,
+        "question": "What are the specific biological markers influenced by the intervention?",
+        "gt_mean": 2.6667,
+        "gt_std": 1.2472,
+        "n_ann": 3,
+        "gt_rank": 16
+      },
+      {
+        "qid": 8,
+        "question": "What were the comparative results between intervention and control groups?",
+        "gt_mean": 5,
+        "gt_std": 0.0,
+        "n_ann": 3,
+        "gt_rank": 1
+      },
+      {
+        "qid": 9,
+        "question": "What condition is being addressed in the study?",
+        "gt_mean": 4.6667,
+        "gt_std": 0.4714,
+        "n_ann": 3,
+        "gt_rank": 6
+      },
+      {
+        "qid": 10,
+        "question": "Which patient population is the study concerned with?",
+        "gt_mean": 4.3333,
+        "gt_std": 0.9428,
+        "n_ann": 3,
+        "gt_rank": 7
+      },
+      {
+        "qid": 11,
+        "question": "What was the study design or setting of the trial?",
+        "gt_mean": 3.6667,
+        "gt_std": 1.2472,
+        "n_ann": 3,
+        "gt_rank": 11
+      },
+      {
+        "qid": 14,
+        "question": "What implications or future recommendations did the study suggest based on its findings?",
+        "gt_mean": 2,
+        "gt_std": 0.8165,
+        "n_ann": 3,
+        "gt_rank": 21
+      },
+      {
+        "qid": 18,
+        "question": "What is the participant demographic or characteristics in the study?",
+        "gt_mean": 3.6667,
+        "gt_std": 0.9428,
+        "n_ann": 3,
+        "gt_rank": 12
+      },
+      {
+        "qid": 19,
+        "question": "How were the participants or subjects of the study selected and divided?",
+        "gt_mean": 2.3333,
+        "gt_std": 1.2472,
+        "n_ann": 3,
+        "gt_rank": 19
+      },
+      {
+        "qid": 20,
+        "question": "What were the methods used in the study?",
+        "gt_mean": 3.3333,
+        "gt_std": 0.9428,
+        "n_ann": 3,
+        "gt_rank": 13
+      },
+      {
+        "qid": 23,
+        "question": "What specific metrics or outcomes were measured?",
+        "gt_mean": 2.6667,
+        "gt_std": 1.2472,
+        "n_ann": 3,
+        "gt_rank": 17
+      },
+      {
+        "qid": 26,
+        "question": "What significant statistical results are reported?",
+        "gt_mean": 5,
+        "gt_std": 0.0,
+        "n_ann": 3,
+        "gt_rank": 2
+      },
+      {
+        "qid": 28,
+        "question": "What are secondary outcomes noted in the study?",
+        "gt_mean": 2.3333,
+        "gt_std": 0.9428,
+        "n_ann": 3,
+        "gt_rank": 20
+      },
+      {
+        "qid": 29,
+        "question": "What is the main outcome or effect observed?",
+        "gt_mean": 5,
+        "gt_std": 0.0,
+        "n_ann": 3,
+        "gt_rank": 3
+      },
+      {
+        "qid": 31,
+        "question": "What are the significant benefits of the intervention?",
+        "gt_mean": 4.3333,
+        "gt_std": 0.4714,
+        "n_ann": 3,
+        "gt_rank": 8
+      },
+      {
+        "qid": 34,
+        "question": "What specific treatments were compared in the study?",
+        "gt_mean": 4,
+        "gt_std": 0.8165,
+        "n_ann": 3,
+        "gt_rank": 9
+      },
+      {
+        "qid": 36,
+        "question": "What was the main intervention used in the study?",
+        "gt_mean": 5,
+        "gt_std": 0.0,
+        "n_ann": 3,
+        "gt_rank": 4
+      }
+    ]
+  }
+}

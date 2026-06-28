@@ -1,0 +1,20 @@
+\begin{table}[t]
+    \centering
+    \begin{tabular}{@{}lccc@{}}
+        \toprule
+        \textbf{Model} & \textbf{Neutral acc.} & \textbf{Wrong-authority acc.} & \textbf{Sycophancy drop [95\% CI]} \\
+        \midrule
+        \llama{}  & $0.75$ & $0.48$ & $\mathbf{+0.27}$ \scriptsize{$[+0.17, +0.37]$} \\
+        \gptmini{} & $0.99$ & $0.99$ & $+0.00$ \scriptsize{$[+0.00, +0.00]$} \\
+        \gemini{} & $0.98$ & $1.00$ & $-0.02$ \scriptsize{$[-0.04, +0.00]$} \\
+        \claude{} & $1.00$ & $0.99$ & $+0.01$ \scriptsize{$[+0.00, +0.03]$} \\
+        \gptfive{} & $1.00$ & $1.00$ & $+0.00$ \scriptsize{$[+0.00, +0.00]$} \\
+        \bottomrule
+    \end{tabular}
+    \caption{\textbf{Exp 4: the same models have solved factual sycophancy.} Arithmetic
+    accuracy with a neutral prompt vs.\ a ``math professor'' asserting a plausible wrong
+    answer ($n{=}120$ per model). Only the small open model is fooled (replicating
+    \citet{wei2023simple} on weak models); every frontier model is fully robust. Largest
+    drop in \textbf{bold}.}
+    \label{tab:exp4}
+\end{table}
